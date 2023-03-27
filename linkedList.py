@@ -78,7 +78,16 @@ class LinkedList(object):
         if previous is None:
             self.head = current.get_next()
         else:
-            previous.set_next(current.get_next())     
+            previous.set_next(current.get_next()) 
+            
+      def deleteALL(self):
+        current = self.head
+        if current is None:
+            print("no data")
+        while current:
+            self.head = current.get_next()
+            current = None
+            current = self.head
             
     # menampilkan data
     def showData(self):
@@ -118,6 +127,8 @@ class LinkedList(object):
                print("panjang LL :" + str(self.size()))
             elif (pilihan == "5") :
                 self.showData()
+            elif (pilihan == "6"):
+                self.deleteALL()
             elif (pilihan == "ya"):
                 continue
             elif (pilihan == "no"):
